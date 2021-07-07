@@ -1,5 +1,7 @@
 package com.tvm.ems.model;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +15,10 @@ public class Employee {
  private long employeeId;
  private String employeeName;
  @Column(nullable = true)
+ private String employeeGender;
+ private Date employeeDOB;
+ private long employeePhoneNumber;
+ private String employeeAddress;
  private String employeeEmail;
  private String employeePassword;
  private boolean admin;
@@ -45,5 +51,29 @@ public boolean isAdmin() {
 }
 public void setAdmin(boolean admin) {
 	this.admin = admin;
+}
+public String getEmployeeGender() {
+	return employeeGender;
+}
+public void setEmployeeGender(String employeeGender) {
+	this.employeeGender = employeeGender;
+}
+public Date getEmployeeDOB() {
+	return employeeDOB;
+}
+public void setEmployeeDOB(Date employeeDOB) {
+	this.employeeDOB = employeeDOB;
+}
+public long getEmployeePhoneNumber() {
+	return employeePhoneNumber;
+}
+public void setEmployeePhoneNumber(long employeePhoneNumber) {
+	this.employeePhoneNumber = employeePhoneNumber;
+}
+public String getEmployeeAddress() {
+	return employeeAddress;
+}
+public void setEmployeeAddress(String employeeAddress) {
+	this.employeeAddress = employeeAddress;
 }
 }
