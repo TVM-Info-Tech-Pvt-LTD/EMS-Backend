@@ -19,16 +19,26 @@ public class EmployeeController {
 		Employee emp=employeeService.saveEmployee(employee);
 		return emp;
 	}
+	String Email;
 	@PostMapping("/signin")
 	public String siginEmployee(@RequestBody EmployeeDto employeeDto) {
 		if(employeeService.validateEmployee(employeeDto)) {
-			return employeeService.returnStaement(employeeDto.getEmployeeEmail());
+		 Email=employeeDto.getEmployeeEmail();
+			//return employeeService.returnStaement(employeeDto.getEmployeeEmail());
+		 return success();
 		
 		}
 		
 		return " Incorrect Username or Password  ";
+	}
+	   @PostMapping()
+		public String success() {
+			
+			return employeeService.returnStaement(Email);
+		}
 		
 	}
 	
 	
-}
+	
+	
