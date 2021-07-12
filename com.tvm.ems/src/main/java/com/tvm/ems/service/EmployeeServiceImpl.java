@@ -21,8 +21,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public Employee saveEmployee(Employee employee) {
-		Employee emp=employeeRepository.save(employee);
-		return emp;
+		if(emailIsPresent(employee.getEmployeeEmail())) {
+			Employee emp=employeeRepository.save(employee);
+			return emp;
+		}
+		return null;
 	}
 
 	@Override
@@ -45,5 +48,15 @@ public class EmployeeServiceImpl implements EmployeeService {
 		}
 		return "User login Succesfully";
 	}
+
+	@Override
+	public boolean emailIsPresent(String email) {
+		Employee employee = getByEmail(email);
+		if(employee!=null) {
+			return false;
+		}
+		return true;
+	}
+	
 
 }

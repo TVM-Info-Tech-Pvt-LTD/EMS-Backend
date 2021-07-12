@@ -8,5 +8,5 @@ public interface EmployeeService {
 	Employee saveEmployee(Employee employee);
 	boolean validateEmployee(EmployeeDto employeeDto);
 	String returnStaement(String email);
-
+	boolean emailIsPresent(String email);
 }
