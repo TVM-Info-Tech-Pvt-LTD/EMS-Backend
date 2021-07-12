@@ -1,6 +1,9 @@
 package com.tvm.ems.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -9,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tvm.ems.dto.EmployeeDto;
 import com.tvm.ems.model.Employee;
 import com.tvm.ems.service.EmployeeService;
-
+@CrossOrigin("http://localhost:4200/")
 @RestController
 public class EmployeeController {
 	@Autowired
@@ -36,6 +39,13 @@ public class EmployeeController {
 			
 			return employeeService.returnStaement(Email);
 		}
+	   
+	   @GetMapping("/employees")
+	   public List<Employee> getEmployee()
+	   {
+		   return employeeService.getEmployee();
+	   }
+	   
 		
 	}
 	

@@ -22,6 +22,7 @@ public class Employee {
  private String employeeEmail;
  private String employeePassword;
  private boolean admin;
+ private String employeeTask;
 public long getEmployeeId() {
 	return employeeId;
 }
@@ -75,5 +76,11 @@ public String getEmployeeAddress() {
 }
 public void setEmployeeAddress(String employeeAddress) {
 	this.employeeAddress = employeeAddress;
+}
+public String getEmployeeTask() {
+	return employeeTask;
+}
+public void setEmployeeTask(String employeeTask) {
+	this.employeeTask = employeeTask;
 }
 }

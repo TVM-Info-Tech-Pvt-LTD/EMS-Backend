@@ -1,5 +1,7 @@
 package com.tvm.ems.service;
 
+import java.util.List;
+
 import com.tvm.ems.dto.EmployeeDto;
 import com.tvm.ems.model.Employee;
 
@@ -9,4 +11,5 @@ public interface EmployeeService {
 	boolean validateEmployee(EmployeeDto employeeDto);
 	String returnStaement(String email);
 	boolean emailIsPresent(String email);
+	List<Employee> getEmployee();
 }
